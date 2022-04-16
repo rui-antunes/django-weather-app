@@ -15,5 +15,8 @@ pip3 install -r requirements.txt
 # APPLY MIGRATIONS
 python manage.py migrate
 
+# Custom actions
+python manage.py createsuperuser --no-input
+
 # LAUNCH SERVER
 python manage.py runserver
