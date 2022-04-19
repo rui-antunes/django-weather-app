@@ -31,7 +31,9 @@ if DEBUG:
     os.environ['DJANGO_SUPERUSER_PASSWORD'] = 'superuser'
     os.environ['DJANGO_SUPERUSER_EMAIL'] = 'superuser@mail.com'
 
-ALLOWED_HOSTS = [] if not os.environ.get('DJANGO_ALLOWED_HOSTS') else os.environ.get('DJANGO_ALLOWED_HOSTS')
+ALLOWED_HOSTS = [] if not os.environ.get('DJANGO_ALLOWED_HOSTS') else [
+    host.strip() for host in os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
+]
 
 # Application definition
 
