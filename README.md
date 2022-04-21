@@ -2,18 +2,27 @@
 
 
 
-## Heroku CLI: Use Cases ##
+## Heroku CLI ##
 
-Deploy the code on heroku service:
+### Locally ###
+
+(TODO)
+
+### On Heroku ###
+
+Deploy:
 
 ```
 git push heroku main
 ```
 
-Force deployment on heroku, even if there are no changes on the source code:
+Force deploy (if there are no source code changes):
 
 ```
 git commit --allow-empty -m "commit to force a deploy"
+```
+
+```
 git push heroku main
 ```
 
