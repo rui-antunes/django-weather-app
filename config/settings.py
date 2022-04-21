@@ -25,17 +25,11 @@ SECRET_KEY = 'django-insecure-e5uk1sm!hvae6f8mp!g$j-ksk9frk-e5a47&qpw5#^_vty7=99
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if os.environ.get('DJANGO_DEBUG') == 'False' else True
 
-# Setting environment variables
-if DEBUG:
-    os.environ['DJANGO_SUPERUSER_USERNAME'] = 'superuser'
-    os.environ['DJANGO_SUPERUSER_PASSWORD'] = 'superuser'
-    os.environ['DJANGO_SUPERUSER_EMAIL'] = 'superuser@mail.com'
-
 ALLOWED_HOSTS = [] if not os.environ.get('DJANGO_ALLOWED_HOSTS') else [
     host.strip() for host in os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
 ]
 
-# Application definition
+# Application Definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -126,7 +120,17 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'production/static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Superuser
+# https://docs.djangoproject.com/en/4.0/ref/django-admin/#createsuperuser
+
+if DEBUG:
+    os.environ['DJANGO_SUPERUSER_USERNAME'] = 'superuser'
+    os.environ['DJANGO_SUPERUSER_PASSWORD'] = 'superuser'
+    os.environ['DJANGO_SUPERUSER_EMAIL'] = 'superuser@mail.com'

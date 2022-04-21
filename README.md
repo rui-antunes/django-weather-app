@@ -21,6 +21,9 @@ git push heroku main
 
 ## Enviroment Variables ##
 
-```
-TODO
-```
+* `DJANGO_DEBUG`
+* `DJANGO_ALLOWED_HOSTS`
+
+* `DJANGO_SUPERUSER_USERNAME`
+* `DJANGO_SUPERUSER_PASSWORD`
+* `DJANGO_SUPERUSER_EMAIL`
