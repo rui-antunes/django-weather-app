@@ -2,7 +2,7 @@
 
 
 
-## Heroku CLI ##
+## Deploy ##
 
 ### Locally ###
 
@@ -10,13 +10,11 @@
 
 ### On Heroku ###
 
-Deploy:
-
 ```
 git push heroku main
 ```
 
-Force deploy (if there are no source code changes):
+Force deploy, if there are no source code changes:
 
 ```
 git commit --allow-empty -m "commit to force a deploy"
